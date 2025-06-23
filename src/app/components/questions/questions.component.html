@@ -1,0 +1,47 @@
+<div class="bg-[#fff] pt-10 pb-8">
+  <div class="container mx-auto px-3">
+    <h2
+      class="text-[#1E3B8A] text-[21px] leading-[1.2] min-[310px]:text-[24px] sm:text-[28px] md:text-[32px] lg:text-[38px] font-[700] text-center mb-2"
+    >
+      Emdad Frequently Asked Questions
+    </h2>
+    <p
+      class="text-[#586881] text-[16px] md:text-[18px] lg:text-[20px] text-center mx-auto mb-8"
+    >
+      Some questions about Emdad are asked frequently. We’ve answered the most
+      frequent questions below.
+    </p>
+    <nz-collapse nzExpandIconPosition="end">
+      <nz-collapse-panel
+        *ngFor="let panel of panels; let i = index; trackBy: trackPanel"
+        [(nzActive)]="panel.active"
+        [nzDisabled]="panel.disabled"
+        [nzHeader]="panel.name"
+      >
+        <ng-template>
+          <div class="!text-[#1E3B8A] font-[700] text-lg">
+            {{ panel.name }}
+          </div>
+        </ng-template>
+        <div
+          class="text-[#586881] text-[14px] sm:text-[16px] font-[600] leading-relaxed"
+        >
+          {{ panel.content }}
+        </div>
+      </nz-collapse-panel>
+    </nz-collapse>
+
+    <ng-template #expandIconTpl let-isActive>
+      <i
+        nz-icon
+        nzType="down"
+        [class.rotate-180]="isActive"
+        style="color: #1e3b8a"
+      ></i>
+    </ng-template>
+
+    <ng-template #expandIconTpl let-isActive>
+      <i nz-icon nzType="down" [class.rotate-180]="isActive"></i>
+    </ng-template>
+  </div>
+</div>

@@ -1,0 +1,179 @@
+<nav
+  class="bg-white py-4 px-3 shadow-[0_0px_12px_-5px_#1e3b8a] fixed top-0 w-[100%] z-[9999]"
+>
+  <div class="container mx-auto flex justify-between items-center">
+    <!-- Logo -->
+    <a routerLink="/">
+      <img src="../../../assets/logo.svg" alt="Logo" class="" />
+    </a>
+
+    <!-- Desktop menu -->
+    <div class="hidden md:flex items-center space-x-3 lg:space-x-4">
+      <a
+        routerLink="/"
+        class="relative font-[600] text-black text-[15px] lg:text-[17px] after:content-[''] after:absolute after:top-[-24px] after:left-0 after:h-[3px] after:w-0 after:bg-[#1e3b8a] hover:after:w-full after:transition-all after:duration-500 hover:text-[#1e3b8a]"
+        >Home</a
+      >
+      <a
+        href="#products"
+        class="relative font-[600] text-black text-[15px] lg:text-[17px] after:content-[''] after:absolute after:top-[-24px] after:left-0 after:h-[3px] after:w-0 after:bg-[#1e3b8a] hover:after:w-full after:transition-all after:duration-500 hover:text-[#1e3b8a]"
+        >Products</a
+      >
+      <a
+        href="#pricing"
+        class="relative font-[600] text-black text-[15px] lg:text-[17px] after:content-[''] after:absolute after:top-[-24px] after:left-0 after:h-[3px] after:w-0 after:bg-[#1e3b8a] hover:after:w-full after:transition-all after:duration-500 hover:text-[#1e3b8a]"
+        >Pricing</a
+      >
+      <a
+        href="#about"
+        class="relative font-[600] text-black text-[15px] lg:text-[17px] after:content-[''] after:absolute after:top-[-24px] after:left-0 after:h-[3px] after:w-0 after:bg-[#1e3b8a] hover:after:w-full after:transition-all after:duration-500 hover:text-[#1e3b8a]"
+        >About</a
+      >
+      <a
+        href="#contact"
+        class="relative font-[600] text-black text-[15px] lg:text-[17px] after:content-[''] after:absolute after:top-[-24px] after:left-0 after:h-[3px] after:w-0 after:bg-[#1e3b8a] hover:after:w-full after:transition-all after:duration-500 hover:text-[#1e3b8a]"
+        >Contact</a
+      >
+      <a
+        href="#faqs"
+        class="relative font-[600] text-black text-[15px] lg:text-[17px] after:content-[''] after:absolute after:top-[-24px] after:left-0 after:h-[3px] after:w-0 after:bg-[#1e3b8a] hover:after:w-full after:transition-all after:duration-500 hover:text-[#1e3b8a]"
+        >FAQs</a
+      >
+    </div>
+
+    <div class="hidden md:flex justify-between items-center gap-5">
+      <a href="#">
+        <nz-icon
+          nzType="user"
+          nzTheme="outline"
+          class="text-[19px] !text-[#1E3B8A] mx-1"
+        />
+        <span
+          class="text-[#000] text-[15px] lg:text-[16px] hover:text-[#1E3B8A] transition-colors duration-500"
+          >Sign Up/Sign In</span
+        >
+      </a>
+
+      <button
+        class="relative z-0 text-[#FFFFFF] bg-[#1E3B8A] px-[28px] py-[8px] lg:px-[35px] text-[15px] lg:text-[17px] rounded-md overflow-hidden transition-colors duration-500 hover:text-[#1E3B8A] before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0 before:w-[90%] before:h-0 before:m-auto before:bg-white before:rounded-[4px] before:z-[-1] hover:before:h-[70%] before:transition-all before:duration-500"
+      >
+        Get Started
+      </button>
+    </div>
+
+    <!-- Mobile menu toggle -->
+    <div
+      class="relative w-[42px] h-[37px] md:hidden bg-[#1E3B8A] text-white rounded-[5px] text-[18px] px-3 py-[4px] overflow-hidden"
+    >
+      <button (click)="isOpen = !isOpen" class="relative w-full h-full">
+        <!-- Menu Icon -->
+        <i
+          nz-icon
+          nzType="menu"
+          nzTheme="outline"
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-in-out"
+          [class.opacity-0]="isOpen"
+          [class.scale-0]="isOpen"
+          [class.opacity-100]="!isOpen"
+          [class.scale-100]="!isOpen"
+        ></i>
+
+        <!-- Close Icon -->
+        <i
+          nz-icon
+          nzType="close"
+          nzTheme="outline"
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-in-out"
+          [class.opacity-0]="!isOpen"
+          [class.scale-0]="!isOpen"
+          [class.opacity-100]="isOpen"
+          [class.scale-100]="isOpen"
+        ></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div
+  class="md:hidden bg-white shadow-[0_0px_12px_-5px_#1e3b8a] overflow-hidden transition-all duration-500 ease-in-out"
+  [ngClass]="{ open: isOpen }"
+  [ngStyle]="{
+    clipPath: clipPathStyle,
+    maxHeight: isOpen ? '500px' : '0',
+    opacity: isOpen ? '1' : '0',
+    visibility: isOpen ? 'visible' : 'hidden'
+  }"
+>
+  <div class="container p-4 mx-auto space-y-3 py-5">
+    <a
+      class="group block w-full text-[#000] text-[16px] transition-colors duration-500 hover:bg-[#1e3b8a] hover:text-white py-[5px] px-[10px] rounded-[5px]"
+      href="/"
+    >
+      <span class="block transition-all duration-500 group-hover:ml-[10px]">
+        Home
+      </span>
+    </a>
+
+    <a
+      class="group block w-full text-[#000] text-[16px] transition-colors duration-500 hover:bg-[#1e3b8a] hover:text-white py-[5px] px-[10px] rounded-[5px]"
+      href="/"
+    >
+      <span class="block transition-all duration-500 group-hover:ml-[10px]">
+        Products
+      </span>
+    </a>
+
+    <a
+      class="group block w-full text-[#000] text-[16px] transition-colors duration-500 hover:bg-[#1e3b8a] hover:text-white py-[5px] px-[10px] rounded-[5px]"
+      href="/"
+    >
+      <span class="block transition-all duration-500 group-hover:ml-[10px]">
+        Pricing
+      </span>
+    </a>
+    <a
+      class="group block w-full text-[#000] text-[16px] transition-colors duration-500 hover:bg-[#1e3b8a] hover:text-white py-[5px] px-[10px] rounded-[5px]"
+      href="/"
+    >
+      <span class="block transition-all duration-500 group-hover:ml-[10px]">
+        About
+      </span>
+    </a>
+    <a
+      class="group block w-full text-[#000] text-[16px] transition-colors duration-500 hover:bg-[#1e3b8a] hover:text-white py-[5px] px-[10px] rounded-[5px]"
+      href="/"
+    >
+      <span class="block transition-all duration-500 group-hover:ml-[10px]">
+        Contact
+      </span>
+    </a>
+    <a
+      class="group block w-full text-[#000] text-[16px] transition-colors duration-500 hover:bg-[#1e3b8a] hover:text-white py-[5px] px-[10px] rounded-[5px]"
+      href="/"
+    >
+      <span class="block transition-all duration-500 group-hover:ml-[10px]">
+        FAQs
+      </span>
+    </a>
+    <div class="md:hidden">
+      <a href="#" class="block mb-3 mt-2 text-center">
+        <nz-icon
+          nzType="user"
+          nzTheme="outline"
+          class="text-[19px] !text-[#1E3B8A] mx-1"
+        />
+        <span
+          class="text-[#000] text-[16px] hover:text-[#1E3B8A] transition-colors duration-500"
+          >Sign Up/Sign In</span
+        >
+      </a>
+
+      <button
+        class="relative z-0 text-[#FFFFFF] bg-[#1E3B8A] py-[8px] text-[16px] w-full rounded-md overflow-hidden transition-colors duration-500 hover:text-[#1E3B8A] before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0 before:w-[97%] before:h-0 before:m-auto before:bg-white before:rounded-[4px] before:z-[-1] hover:before:h-[70%] before:transition-all before:duration-500"
+      >
+        Get Started
+      </button>
+    </div>
+  </div>
+</div>
