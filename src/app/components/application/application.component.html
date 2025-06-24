@@ -50,16 +50,17 @@
             placeholder="Business Email"
             class="border border-[#c7cee2] rounded-lg w-full px-3 py-2 mb-3"
           />
-          <input
-            type="email"
-            placeholder="Business Email"
-            class="border border-[#c7cee2] rounded-lg w-full px-3 py-2 mb-3"
-          />
-          <input
-            type="email"
-            placeholder="Business Email"
-            class="border border-[#c7cee2] rounded-lg w-full px-3 py-2 mb-3"
-          />
+          <nz-select
+            name="partnershipType"
+            class="!rounded-lg w-full px-3 py-2 !mb-3"
+            nzPlaceHolder="Partnership Type of Interest"
+            [(ngModel)]="selectedType"
+            [ngModelOptions]="{ standalone: true }"
+            [nzOptions]="partnershipTypes"
+            nzShowSearch
+            nzAllowClear
+          ></nz-select>
+
           <textarea
             rows="4"
             class="border border-[#c7cee2] rounded-lg w-full px-3 py-2 mb-4"

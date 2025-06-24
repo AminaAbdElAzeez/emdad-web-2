@@ -1,21 +1,16 @@
-.link {
-  position: relative;
+.active-link::after {
+  width: 100% !important;
 }
-.link::after {
-  content: "";
-  position: absolute;
-  top: -24px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  height: 75px;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 0, 0, 0.4),
-    rgba(255, 0, 0, 0.1),
-    transparent
-  );
-  filter: blur(4px);
-  pointer-events: none;
-  z-index: -1;
+.active-link {
+  color: #1e3b8a !important;
+}
+@media screen and (max-width: 767px) {
+  .active-link {
+    background-color: #1e3b8a !important;
+    color: white !important;
+  }
+  .active-link span {
+    margin-left: 10px;
+    transition: all 0.5s;
+  }
 }

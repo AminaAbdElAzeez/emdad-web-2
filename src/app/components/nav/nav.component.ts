@@ -2,11 +2,18 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
   standalone: true,
-  imports: [NzButtonModule, NzIconModule, CommonModule],
+  imports: [
+    NzButtonModule,
+    NzIconModule,
+    CommonModule,
+    RouterLink,
+    RouterLinkActive,
+  ],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.scss',
 })

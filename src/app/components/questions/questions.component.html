@@ -1,35 +1,32 @@
 <div class="bg-[#fff] pt-10 pb-8">
   <div class="container mx-auto px-3">
-    <h2
-      class="text-[#1E3B8A] text-[21px] leading-[1.2] min-[310px]:text-[24px] sm:text-[28px] md:text-[32px] lg:text-[38px] font-[700] text-center mb-2"
-    >
-      Emdad Frequently Asked Questions
-    </h2>
-    <p
-      class="text-[#586881] text-[16px] md:text-[18px] lg:text-[20px] text-center mx-auto mb-8"
-    >
-      Some questions about Emdad are asked frequently. We’ve answered the most
-      frequent questions below.
-    </p>
-    <nz-collapse nzExpandIconPosition="end">
-      <nz-collapse-panel
-        *ngFor="let panel of panels; let i = index; trackBy: trackPanel"
-        [(nzActive)]="panel.active"
-        [nzDisabled]="panel.disabled"
-        [nzHeader]="panel.name"
+    <div *ngFor="let group of panelGroups">
+      <h3
+        class="text-[#1E3B8A] text-[20px] lg:text-[22px] font-[700] leading-[1.3] mb-3"
       >
-        <ng-template>
-          <div class="!text-[#1E3B8A] font-[700] text-lg">
-            {{ panel.name }}
-          </div>
-        </ng-template>
-        <div
-          class="text-[#586881] text-[14px] sm:text-[16px] font-[600] leading-relaxed"
+        {{ group.title }}
+      </h3>
+
+      <nz-collapse nzExpandIconPosition="end">
+        <nz-collapse-panel
+          *ngFor="let panel of group.panels; let i = index; trackBy: trackPanel"
+          [(nzActive)]="panel.active"
+          [nzDisabled]="panel.disabled"
+          [nzHeader]="panel.name"
         >
-          {{ panel.content }}
-        </div>
-      </nz-collapse-panel>
-    </nz-collapse>
+          <ng-template>
+            <div class="!text-[#1E3B8A] font-[700] text-lg">
+              {{ panel.name }}
+            </div>
+          </ng-template>
+          <div
+            class="text-[#586881] text-[14px] sm:text-[16px] font-[600] leading-relaxed"
+          >
+            {{ panel.content }}
+          </div>
+        </nz-collapse-panel>
+      </nz-collapse>
+    </div>
 
     <ng-template #expandIconTpl let-isActive>
       <i
